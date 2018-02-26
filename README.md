@@ -49,17 +49,17 @@ A dictionary in the form of:
 ```
 
 ###### Ex.1: To retrieve all coins data in a single dictionary
-Simply call `get_coins()`.
+`get_coins()`
 ###### Ex.2: To retrieve data for Bitcoin
-Call `get_coins('bitcoin')` or `get_coins('btc')`.
+`get_coins('bitcoin')` or `get_coins('btc')`
 ###### Ex.3: To retrieve data for Bitcoin and Ethereum
-Call `get_coins(['bitcoin', 'ethereum'])`, `get_coins(['btc', 'eth'])` or `get_coins(['bitcoin', 'eth'])`.
+`get_coins(['bitcoin', 'ethereum'])`, `get_coins(['btc', 'eth'])` or `get_coins(['bitcoin', 'eth'])`
 ###### Ex.4: To retrieve data for Bitcoin, Ethereum and Monero, all converted to Euro
-Call `get_coins(['bitcoin', 'eth', 'xmr'], 'EUR')`.
+`get_coins(['bitcoin', 'eth', 'xmr'], 'EUR')`
 ###### Ex.5: To retrieve Bitcoin's price directly
-Call `get_coins('btc')['price']`.
+`get_coins('btc')['price']`
 ###### Ex.6: To retrieve Ethereum's market cap, in Australian Dollars, directly
-Call `get_coins('eth', 'AUD')['market_cap']`.
+`get_coins('eth', 'AUD')['market_cap']`
 
 ## get_global_data(convert='USD')
 `get_global_data()` takes 1 optional parameter, `convert`, and returns a dictionary with all available data for the entire cryptocurrency market, properly converted to the specified conversion currency.
@@ -79,8 +79,48 @@ A dictionary in the form of:
 ```
 
 ###### Ex.1: To retrieve global data in US Dollars
-Simply call `get_global_data()`.
+`get_global_data()`
 ###### Ex.2: To retrieve global data in Euro
-Call `get_global_data('EUR')`.
+`get_global_data('EUR')`
 ###### Ex.3: To retrieve global market cap, in Euro, directly
-Call `get_global_data('EUR')['market_cap']`.
+`get_global_data('EUR')['market_cap']`
+
+## get_historical_data(coin, convert='USD', start=None, end=None)
+`get_historical_data()` takes 1 required parameter, `coin`, and 3 other optional parameters, `convert`, `start` and `end`, and returns a list of dictionaries, in which each dict in the list is the `coin` data for a single day, properly converted. The list includes all data from `start` date to `end` date.
+
+###### >> Parameters
+- `coin`: A coin symbol or name.
+- `convert`: A conversion currency symbol (e.g. `'USD'`, `'EUR'`, `'AUD'`).
+- `start`: A `datetime` object containing a start date (e.g. `datetime.datetime(2018, 2, 3, 0, 0, 0)` for Feb 3, 2018).
+- `end`: A `datetime` object containing an end date.
+
+###### >> Returns
+A dictionary in the form of:
+```
+[{'close': 8218.05,   # Day 1: Feb 3, 2018
+  'high': 9400.99,
+  'low': 7889.83,
+  'open': 9251.27,
+  'time': datetime.datetime(2018, 2, 3, 22, 0),
+  'volumefrom': 164609.06,
+  'volumeto': 1413207410.82},
+ {'close': 6937.08,   # Day 2: Feb 4, 2018
+  'high': 8391.29,
+  'low': 6627.31,
+  'open': 8218.05,
+  'time': datetime.datetime(2018, 2, 4, 22, 0),
+  'volumefrom': 341828.54,
+  'volumeto': 2534149181.03},
+ (...)]
+```
+
+###### Ex.1: To retrieve all historical data for Bitcoin, in US Dollars
+`get_historical_data('btc')` or `get_historical_data('bitcoin')`
+###### Ex.2: To retrieve historical data for Ethereum, in US dollars, from Feb 3, 2018 to today
+`get_historical_data('eth', 'USD', datetime.datetime(2018, 2, 3, 0, 0, 0))`
+###### Ex.3: To retrieve historical data for Monero, in Euro, from Feb 3, 2018 to Feb 15, 2018
+```
+>>> s = datetime.datetime(2018, 2, 3, 0, 0, 0)
+>>> e = datetime.datetime(2018, 2, 15, 0, 0, 0)
+>>> get_historical_data('monero', 'EUR', s, e)
+```
