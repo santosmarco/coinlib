@@ -8,20 +8,28 @@ Coinlib is the ultimate cryptocurrency-related Python module. You can retrieve p
 `sudo pip3 install coinlib`
 
 # Documentation
+
 ## Getting started
 First of all, you need to `import coinlib` into your project. For quick reference, the functions you can currently use from the library are all listed below.
 - `get_coins(coins=[], convert='USD')`
 - `get_global_data(convert='USD')`
 - `get_historical_data(coin, convert='USD', start=None, end=None)`
 
+## Conventions
+###### Disclaimer
+All pull requests MUST be consistent with these conventions.
+###### coinlib.C1
+All function parameters are case-INsensitive. Pass your arguments however you want: UPPERCASED, lowercased, or even CamelCased.
+###### coinlib.C2
+All function parameters that take coins as their argument accept either coin symbols, names or both. You can pass them to the functions as `'btc'` or `'bitcoin'`.
+
 ## get_coins(coins=[], convert='USD')
 `get_coins()` takes 2 optional parameters, `coins` and `convert`, and returns a dictionary with all available data for the specified coins. If no coin is specified, it returns a dictionary with all available data for all active coins.
 
-###### Parameters
+###### >> Parameters
 - `coins=[]`: Pass it a list of coin symbols, names, or both and it will return a dictionary containing data for the specified coins. Pass it nothing and it will return a dictionary containing data for all active coins. You can also pass it a string with only one coin symbol or name and it will return a data dictionary for this coin.
 - `convert='USD'`: Pass it a string containing a currency symbol and it will return all data converted to this currency pair.
-
-###### Returns
+###### >> Returns
 A dictionary in the form of:
 ```
 {'btc': {'24h_volume': 6822060000.0,
@@ -40,20 +48,39 @@ A dictionary in the form of:
          'total_supply': 16887562.0}}
 ```
 
-###### To retrieve all coins data in a single dictionary
+###### Ex.1: To retrieve all coins data in a single dictionary
 Simply call `get_coins()`.
+###### Ex.2: To retrieve data for Bitcoin
+Call `get_coins('bitcoin')` or `get_coins('btc')`.
+###### Ex.3: To retrieve data for Bitcoin and Ethereum
+Call `get_coins(['bitcoin', 'ethereum'])`, `get_coins(['btc', 'eth'])` or `get_coins(['bitcoin', 'eth'])`.
+###### Ex.4: To retrieve data for Bitcoin, Ethereum and Monero, all converted to Euro
+Call `get_coins(['bitcoin', 'eth', 'xmr'], 'EUR')`.
+###### Ex.5: To retrieve Bitcoin's price directly
+Call `get_coins('btc')['price']`.
+###### Ex.6: To retrieve Ethereum's market cap, in Australian Dollars, directly
+Call `get_coins('eth', 'AUD')['market_cap']`.
 
-###### To retrieve data for Bitcoin
-Call `get_coins('bitcoin')` or `get_coins('btc')`. Case-insensitive.
+## get_global_data(convert='USD')
+`get_global_data()` takes 1 optional parameter, `convert`, and returns a dictionary with all available data for the entire cryptocurrency market, properly converted to the specified conversion currency.
 
-###### To retrieve data for Bitcoin and Ethereum
-Call `get_coins(['bitcoin', 'ethereum'])`, `get_coins(['btc', 'eth'])` or `get_coins(['bitcoin', 'eth'])`. Case-insensitive.
+###### >> Parameters
+- `convert='USD'`: Pass it a string containing a currency symbol and it will return all data converted to this currency pair.
+###### >> Returns
+A dictionary in the form of:
+```
+{'24h_volume': 18242464650.0,
+ 'active_assets': 585,
+ 'active_currencies': 903,
+ 'active_markets': 8718,
+ 'btc_dominance': 38.63,
+ 'last_updated': datetime.datetime(2018, 2, 26, 11, 19, 28),
+ 'market_cap': 452668330502.0}
+```
 
-###### To retrieve data for Bitcoin, Ethereum and Monero, all converted to Euro
-Call `get_coins(['bitcoin', 'eth', 'xmr'], 'EUR')`. Case-insensitive.
-
-###### To retrieve Bitcoin's price directly
-Call `get_coins('btc')['price']`. Case-insensitive.
-
-###### To retrieve Ethereum's market cap, in Australian Dollars, directly
-Call `get_coins('eth', 'AUD')['market_cap']`. Case-insensitive.
+###### Ex.1: To retrieve global data in US Dollars
+Simply call `get_global_data()`.
+###### Ex.2: To retrieve global data in Euro
+Call `get_global_data('EUR')`.
+###### Ex.3: To retrieve global market cap, in Euro, directly
+Call `get_global_data('EUR')['market_cap']`.
