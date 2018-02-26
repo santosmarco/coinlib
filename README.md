@@ -21,7 +21,7 @@ All pull requests MUST be consistent with these conventions.
 ###### coinlib.C1
 All function parameters are case-INsensitive. Pass your arguments however you want: UPPERCASED, lowercased, or even CamelCased.
 ###### coinlib.C2
-All function parameters that take coins as their argument accept either coin symbols, names or both. You can pass them to the functions as `'btc'` or `'bitcoin'`.
+All function parameters that take coins as their argument accept either coin symbols, names or both. For example, you can pass Bitcoin to a function as `'btc'` or `'bitcoin'`.
 
 ## get_coins(coins=[], convert='USD')
 `get_coins()` takes 2 optional parameters, `coins` and `convert`, and returns a dictionary with all available data for the specified coins. If no coin is specified, it returns a dictionary with all available data for all active coins.
