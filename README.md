@@ -95,7 +95,7 @@ A dictionary in the form of:
 - `end`: A `datetime` object containing an end date.
 
 ###### >> Returns
-A dictionary in the form of:
+A list of dictionaries in the form of:
 ```
 [{'close': 8218.05,   # Day 1: Feb 3, 2018
   'high': 9400.99,
