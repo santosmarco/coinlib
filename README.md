@@ -28,11 +28,11 @@ All function parameters are case-INsensitive. Pass your arguments however you wa
 All function parameters that take coins as their argument accept either coin symbols, names or both. For example, you can pass Bitcoin to a function as `'btc'` or `'bitcoin'`.
 
 ## get_coins(coins=[], convert='USD')
-`get_coins()` takes 2 optional parameters, `coins` and `convert`, and returns a dictionary with all available data for the specified coins. If no coin is specified, it returns a dictionary with all available data for all active coins.
+`get_coins()` takes 2 optional parameters, `coins` and `convert`, and returns a dictionary with data for the specified coins. If no coin is specified, it returns a dictionary with data for all active coins.
 
 ###### >> Parameters
-- `coins=[]`: Pass it a list of coin symbols, names, or both and it will return a dictionary containing data for the specified coins. Pass it nothing and it will return a dictionary containing data for all active coins. You can also pass it a string with only one coin symbol or name and it will return a data dictionary for this coin.
-- `convert='USD'`: Pass it a string containing a currency symbol and it will return all data converted to this currency pair.
+- `coin`: A list of coin symbols or names. Also accepts a string containing only one coin. Don't pass anything to this parameter to return all active coins.
+`convert`: A conversion currency symbol (e.g. `'USD'`, `'EUR'`, `'AUD'`).
 ###### >> Returns
 A dictionary in the form of:
 ```
@@ -69,7 +69,7 @@ A dictionary in the form of:
 `get_global_data()` takes 1 optional parameter, `convert`, and returns a dictionary with all available data for the entire cryptocurrency market, properly converted to the specified conversion currency.
 
 ###### >> Parameters
-- `convert='USD'`: Pass it a string containing a currency symbol and it will return all data converted to this currency pair.
+- `convert`: A conversion currency symbol (e.g. `'USD'`, `'EUR'`, `'AUD'`).
 ###### >> Returns
 A dictionary in the form of:
 ```
@@ -97,7 +97,6 @@ A dictionary in the form of:
 - `convert`: A conversion currency symbol (e.g. `'USD'`, `'EUR'`, `'AUD'`).
 - `start`: A `datetime` object containing a start date (e.g. `datetime.datetime(2018, 2, 3, 0, 0, 0)` for Feb 3, 2018).
 - `end`: A `datetime` object containing an end date.
-
 ###### >> Returns
 A list of dictionaries in the form of:
 ```
