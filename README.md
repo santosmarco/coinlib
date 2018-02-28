@@ -1,6 +1,9 @@
 # coinlib
 Coinlib is the ultimate cryptocurrency-related Python module. You can retrieve prices, market caps, 24h volumes and historical data for individual coins, or news and global data for the entire crypto universe with the use of simple and intuitive functions. 
 
+# For contributors
+If you want to jump right into the library, click [here]() to be taken directly to our to do list.
+
 # Installation
 This module is specific to **Python 3**. Download it first [here](https://www.python.org/downloads/). The following installation instructions use the `pip install` command. If you are unfamiliar with it, check out [this tutorial](https://automatetheboringstuff.com/appendixa/).
 ## Windows
@@ -138,4 +141,38 @@ None
 A *News* object.
 
 ## *News* objects
-Teste
+*News* objects have a handful of attributes and one very important method. Each News attribute is a list of the latests news from one news portal.
+
+###### >> Attributes
+- `.coindesk`
+- `.cointelegraph`
+- `.cryptocurrencynews`
+- `.ccn`
+- `.newsbtc`
+- `.bitcoinst`
+- `.all`: A list of all news from the portals listed above, sorted by date (latest to earliest).  
+  
+The news in this list are sorted by date (latest to earliest) and are dictionaries in the form of:
+ ```
+ {'authors': ['Annaliese Milano'],
+  'link': 'https://www.coindesk.com/us-city-plans-to-sell-tokenized-bonds-in-initial-community-offering/',
+  'summary': 'Confronted with big federal funding reductions, Berkeley, '
+             'California, is turning to crypto token-based funding for '
+             'services like affordable housing.',
+  'tags': ['News',
+           'Investments',
+           'Initial Coin Offerings',
+           'California',
+           'ICOs',
+           'Bonds',
+           'Berkeley'],
+  'time': datetime.datetime(2018, 2, 28, 11, 0, 12),
+  'title': "US City Plans to Sell Tokenized Bonds in 'Initial Community "
+           "Offering'"},
+ ```
+ Note: Some news may contain HTML tags on their `summary`. We're working hard to prettify it as soon as possible.
+ 
+ ###### >> Methods
+ - `.refresh()`: Updates all News atributes.
+ 
+ # To do list
