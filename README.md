@@ -4,7 +4,7 @@ Coinlib is the ultimate cryptocurrency-related Python module. You can retrieve p
 # Installation
 This module is specific to **Python 3**. Download it first [here](https://www.python.org/downloads/). The following installation instructions use the `pip install` command. If you are unfamiliar with it, check out [this tutorial](https://automatetheboringstuff.com/appendixa/).
 ## Windows
-On terminal, type `pip install coinlib`
+On Terminal, type `pip install coinlib`
 ## MacOS / Linux
 On Terminal, type `sudo pip3 install coinlib`
 
