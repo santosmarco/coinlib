@@ -17,7 +17,7 @@ First of all, you need to `import coinlib` into your project. For quick referenc
 - [`get_coins(coins=[], convert='USD')`](https://github.com/santosmarco/coinlib#get_coinscoins-convertusd)
 - [`get_global_data(convert='USD')`](https://github.com/santosmarco/coinlib#get_global_dataconvertusd)
 - [`get_historical_data(coin, convert='USD', start=None, end=None)`](https://github.com/santosmarco/coinlib#get_historical_datacoin-convertusd-startnone-endnone)
-- [`get_news()`](https://github.com/santosmarco/coinlib#get_historical_datacoin-convertusd-startnone-endnone)
+- [`get_news()`](https://github.com/santosmarco/coinlib#get_news)
 
 ## Conventions
 ###### Disclaimer
@@ -130,7 +130,7 @@ A list of dictionaries in the form of:
 ```
 
 ## get_news()
-`get_news()` takes no parameters and returns a *News* object. [More on *News* objects]().
+`get_news()` takes no parameters and returns a *News* object. [More on *News* objects](https://github.com/santosmarco/coinlib#news-objects).
 
 ###### >> Parameters
 None
