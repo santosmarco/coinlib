@@ -32,7 +32,7 @@ All function parameters that take coins as their argument accept either coin sym
 
 ###### >> Parameters
 - `coin`: A list of coin symbols or names. Also accepts a string containing only one coin. Don't pass anything to this parameter to return all active coins.
-`convert`: A conversion currency symbol (e.g. `'USD'`, `'EUR'`, `'AUD'`).
+- `convert`: A conversion currency symbol (e.g. `'USD'`, `'EUR'`, `'AUD'`).
 ###### >> Returns
 A dictionary in the form of:
 ```
