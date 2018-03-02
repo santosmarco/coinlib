@@ -234,7 +234,7 @@ A *Wallet* object.
 ```
 
 # To do list
-- Complete revision on Wallet.
+- Complete revision of Wallet.
 - Add docstrings.
 - Remove HTML tags from some news `summary`.
 - Add: `News().refresh()` should return `True` on success; `False` otherwise. This, however, is not yet implemented.
