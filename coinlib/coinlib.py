@@ -237,8 +237,8 @@ def get_historical_data(coin, convert='USD', start=None, end=None):
 
 
 def get_news():
-    return News()
+    return news.News()
 
 
 def new_wallet():
-    return Wallet()
+    return wallet.Wallet()
