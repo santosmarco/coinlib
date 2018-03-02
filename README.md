@@ -2,7 +2,7 @@
 Coinlib is the ultimate cryptocurrency-related Python module. You can retrieve prices, market caps, 24h volumes and historical data for individual coins, or news and global data for the entire crypto universe, with the use of simple and intuitive functions. 
 
 # For contributors
-If you want to jump right into contributing for this library, click [here](https://github.com/santosmarco/coinlib#to-do-list) to be taken directly to our to do list. Following this list is not mandatory, but is highly recommended.
+If you want to jump right into contributing to this library, click [here](https://github.com/santosmarco/coinlib#to-do-list) to be taken directly to our to do list. Following this list is not mandatory, but is highly recommended.
 
 # Installation
 This module is specific to **Python 3.6** or newer. Download it [here](https://www.python.org/downloads/). The following installation instructions use the `pip install` command. If you are unfamiliar with it, check out [this tutorial](https://automatetheboringstuff.com/appendixa/).
