@@ -25,7 +25,7 @@ For quick reference, the functions you can currently use from this library are l
 - [`get_historical_data(coin, convert='USD', start=None, end=None)`](https://github.com/santosmarco/coinlib#get_historical_datacoin-convertusd-startnone-endnone)
 - [`get_news()`](https://github.com/santosmarco/coinlib#get_news)
 - [`News()`](https://github.com/santosmarco/coinlib#news-objects)
-- [`new_wallet()`]()
+- [`new_wallet()`](https://github.com/santosmarco/coinlib#new_wallet)
 - [`Wallet()`](https://github.com/santosmarco/coinlib#wallet-objects)
 
 ## Conventions
