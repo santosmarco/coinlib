@@ -180,3 +180,4 @@ The news retrieved by any of these attributes are all sorted by date (latest to 
  
  # To do list
 - Remove HTML tags from some news `summary`.
+- Add: `News().refresh()` should return `True` on success; `False` otherwise. This, however, is not yet implemented.
