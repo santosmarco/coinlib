@@ -182,10 +182,11 @@ The news retrieved by any of these attributes are all sorted by date (latest to 
  - `.refresh()`: Updates all attributes. **Returns** `True` on success; `False` otherwise.
  
  ## new_wallet()
-`new_Wallet()` takes no parameters and returns a *Wallet* object. [More on *Wallet* objects](https://github.com/santosmarco/coinlib#wallet-objects).
+`new_Wallet(contents={})` takes 1 optional parameter, `contents`, and returns a *Wallet* object. [More on *Wallet* objects](https://github.com/santosmarco/coinlib#wallet-objects).
 
 ###### >> Parameters
-None.
+- `contents`: A dictionary containing the coins you currently have in your wallet (its keys) and the quantity (its values).  
+If nothing is specified, an empty *Wallet* will be instantiated.
 
 ###### >> Returns
 A *Wallet* object.
@@ -205,8 +206,33 @@ A *Wallet* object.
 - `.remove(coin)`: Removes `coin` from the *Wallet* `.contents` attribute. **Returns** `.contents`.
 - `.remove_many(coins)`: `coins` **has** to be a dictionary. For each coin symbol/name in its keys, removes this coin from the *Wallet* `contents` attribute. **Returns** `.contents`.
 
+###### >> Example
+```
+>>> my_wallet = new_wallet()
+>>> my_wallet.add('btc', 1)
+{'btc': 1}
+>>> my_wallet.get_value()
+10989.3
+>>> coins_to_add = {
+	'eth': 2,
+	'xmr': 3.5
+	}
+>>> my_wallet.add_many(coins_to_add)
+{'btc': 1, 'eth': 2, 'xmr': 3.5}
+>>> my_wallet.subtract('monero', 1)
+{'btc': 1, 'eth': 2, 'xmr': 2.5}
+>>> coins_to_subtract = {
+	'bitcoin': 0.3,
+	'eTHeReuM': 1
+	}
+>>> my_wallet.subtract_many(coins_to_subtract)
+{'btc': 0.7, 'eth': 1, 'xmr': 2.5}
+>>> my_wallet.get_value()
+9349.180499999999
+```
 
 # To do list
+- Complete revision on Wallet.
 - Add docstrings.
 - Remove HTML tags from some news `summary`.
 - Add: `News().refresh()` should return `True` on success; `False` otherwise. This, however, is not yet implemented.
