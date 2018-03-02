@@ -1,7 +1,8 @@
 import json
 import requests
 import datetime
-import News
+import news
+import wallet
 
 
 VALID_CONVERSION_CURRENCIES = [
