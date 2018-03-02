@@ -62,8 +62,3 @@ class Wallet():
         for coin in coins:
             coin = coin.lower().strip()
             del self.content[coin]
-
-
-teste = Wallet()
-
-print(teste.get_value())
