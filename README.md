@@ -178,6 +178,21 @@ The news retrieved by any of these attributes are all sorted by date (latest to 
  ###### >> Methods
  - `.refresh()`: Updates all attributes. **Returns** `True` on success; `False` otherwise.
  
+ ## *Wallet* objects
+*Wallet* objects simulate a virtual wallet. *Wallet* objects have one attribute, `contents`, and plenty of methods to interact with it.
+
+###### >> Attributes
+- `.contents`: A dictionary containing the coins you currently have in your wallet (its keys) and the quantity (its values).
+
+###### >> Methods
+- `.get_value(convert='USD')`: Returns the *Wallet*'s total value, based on its `.contents` attribute, properly converted to `convert`.
+- `.add(coin, quantity)`: Adds a `quantity` number of `coin` to the *Wallet* `contents` attribute. **Returns** `.contents`.
+- `.add_many(coins)`: `coins` **has** to be a dictionary. For each coin symbol/name in its keys, adds this coin and the quantity in its respective value to the *Wallet* `contents` attribute. **Returns** `.contents`.
+- `.subtract(coin, quantity)`: Subtract a `quantity` number of `coin` from the *Wallet* `contents` attribute. **Returns** `.contents`.
+- `.subtract_many(coins)`: `coins` **has** to be a dictionary. For each coin symbol/name in its keys, subtracts from this coin the quantity in its respective value, from the *Wallet* `contents` attribute. **Returns** `.contents`.
+- `.remove(coin)`: Removes `coin` from the *Wallet* `.contents` attribute. **Returns** `.contents`.
+
+
 # To do list
 - Add docstrings 
 - Remove HTML tags from some news `summary`.
