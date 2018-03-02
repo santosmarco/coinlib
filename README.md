@@ -24,6 +24,9 @@ For quick reference, the functions you can currently use from this library are l
 - [`get_global_data(convert='USD')`](https://github.com/santosmarco/coinlib#get_global_dataconvertusd)
 - [`get_historical_data(coin, convert='USD', start=None, end=None)`](https://github.com/santosmarco/coinlib#get_historical_datacoin-convertusd-startnone-endnone)
 - [`get_news()`](https://github.com/santosmarco/coinlib#get_news)
+- [`News()`](https://github.com/santosmarco/coinlib#news-objects)
+- [`new_wallet()`]()
+- [`Wallet()`](https://github.com/santosmarco/coinlib#wallet-objects)
 
 ## Conventions
 ###### Disclaimer
@@ -178,6 +181,15 @@ The news retrieved by any of these attributes are all sorted by date (latest to 
  ###### >> Methods
  - `.refresh()`: Updates all attributes. **Returns** `True` on success; `False` otherwise.
  
+ ## new_wallet()
+`new_Wallet()` takes no parameters and returns a *Wallet* object. [More on *Wallet* objects](https://github.com/santosmarco/coinlib#wallet-objects).
+
+###### >> Parameters
+None.
+
+###### >> Returns
+A *Wallet* object.
+ 
  ## *Wallet* objects
 *Wallet* objects simulate a virtual wallet. *Wallet* objects have one attribute, `contents`, and plenty of methods to interact with it.
 
@@ -191,9 +203,10 @@ The news retrieved by any of these attributes are all sorted by date (latest to 
 - `.subtract(coin, quantity)`: Subtract a `quantity` number of `coin` from the *Wallet* `contents` attribute. **Returns** `.contents`.
 - `.subtract_many(coins)`: `coins` **has** to be a dictionary. For each coin symbol/name in its keys, subtracts from this coin the quantity in its respective value, from the *Wallet* `contents` attribute. **Returns** `.contents`.
 - `.remove(coin)`: Removes `coin` from the *Wallet* `.contents` attribute. **Returns** `.contents`.
+- `.remove_many(coins)`: `coins` **has** to be a dictionary. For each coin symbol/name in its keys, removes this coin from the *Wallet* `contents` attribute. **Returns** `.contents`.
 
 
 # To do list
-- Add docstrings 
+- Add docstrings.
 - Remove HTML tags from some news `summary`.
 - Add: `News().refresh()` should return `True` on success; `False` otherwise. This, however, is not yet implemented.
