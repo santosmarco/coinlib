@@ -176,7 +176,7 @@ The news retrieved by any of these attributes are all sorted by date (latest to 
  ```
  
  ###### >> Methods
- - `.refresh()`: Updates all attributes.
+ - `.refresh()`: Updates all attributes. **Returns** `True` on success; `False` otherwise.
  
  # To do list
 - Remove HTML tags from some news `summary`.
