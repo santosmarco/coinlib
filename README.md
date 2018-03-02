@@ -229,6 +229,8 @@ A *Wallet* object.
 {'btc': 0.7, 'eth': 1, 'xmr': 2.5}
 >>> my_wallet.get_value()
 9349.180499999999
+>>> my_wallet.remove('btc')
+{'eth': 1, 'xmr': 2.5}
 ```
 
 # To do list
