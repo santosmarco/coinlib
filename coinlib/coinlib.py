@@ -1,7 +1,8 @@
 import json
 import requests
 import datetime
-import News
+import news
+import wallet
 
 
 VALID_CONVERSION_CURRENCIES = [
@@ -237,3 +238,7 @@ def get_historical_data(coin, convert='USD', start=None, end=None):
 
 def get_news():
     return News()
+
+
+def new_wallet():
+    return Wallet()
