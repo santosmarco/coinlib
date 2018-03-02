@@ -19,7 +19,7 @@ On Terminal, type `sudo pip3 install coinlib`
 ## Getting started
 First of all, you need to `import coinlib` into your project.  
   
-For quick reference, the functions you can currently use from the library are listed below. Clicking on one of them will take you to its full documentation.
+For quick reference, the functions you can currently use from this library are listed below. Clicking on one of them will take you to its full documentation.
 - [`get_coins(coins=[], convert='USD')`](https://github.com/santosmarco/coinlib#get_coinscoins-convertusd)
 - [`get_global_data(convert='USD')`](https://github.com/santosmarco/coinlib#get_global_dataconvertusd)
 - [`get_historical_data(coin, convert='USD', start=None, end=None)`](https://github.com/santosmarco/coinlib#get_historical_datacoin-convertusd-startnone-endnone)
